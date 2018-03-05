@@ -28,6 +28,8 @@ public class WriteProAction implements CommandHandler{
 	      article.setPasswd(req.getParameter("passwd"));
 	      article.setContent(req.getParameter("content"));
 	      article.setIp(req.getRemoteAddr());
+	      
+	      
 	      System.out.println(article);
 	      BoardDBBean dbPro = BoardDBBean.getInstance();
 	      dbPro.insertArticle(article);

@@ -24,8 +24,12 @@
 		</span>
 		<p class="w3-right w3-padding-right-large">
 			<a href="writeForm">글쓰기</a>
+		</p><br>
+		<p class="w3-right w3-padding-right-large">
+			<a href="writeFormUpload">업로드</a>
 		</p>
-		
+		<img src="/ReplyBoardMVC/fileSave/${filename }">
+		${ filename}
 		<c:if test="${count==0 }">
 			<table class="table-bordered" width="700">
 			<tr class="w3-grey">

@@ -100,7 +100,7 @@ public class BoardDBBean {
 			//ref 다루기===============================
 			
 			sql = "insert into board(num, writer,email,subject,passwd,reg_date,";
-			sql += "ref,re_step,re_level,content,ip,boardid) values(?,?,?,?,?,sysdate,?,?,?,?,?,?)";
+			sql += "ref,re_step,re_level,content,ip,boardid, filename, filesize ) values(?,?,?,?,?,sysdate,?,?,?,?,?,?,?,?)";
 			System.out.println(number);
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, number);
@@ -113,9 +113,10 @@ public class BoardDBBean {
 			pstmt.setInt(8, re_level);
 			pstmt.setString(9, article.getContent());
 			pstmt.setString(10, article.getIp());
-			pstmt.setString(11, "1");
+			pstmt.setString(11, article.getBoardid());
+			pstmt.setString(12, article.getFilename());
+			pstmt.setInt(13, article.getFilesize());
 			pstmt.executeUpdate();
-			System.out.println("end");
 		} catch (Exception e) {
 			e.getStackTrace();
 		} finally {
